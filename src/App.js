@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
-function todo() {
+
+
+
+function Todo() {
+
+  const [text, setText] = useState("")
+
+function handlechange(event){
+ let t = event.target.value;
+ setText(t)
+}
+
   return (
     <div className="container">
 <h1>paulo</h1>
 <form>
-  <input type='text'>
+  <input type='text' onChange={handlechange}>
 
   </input>
   <button>
@@ -14,10 +25,10 @@ function todo() {
   </button>
 </form>
 <ul>
-  <li>Item</li>
+  <li>{text}</li>
 </ul>
     </div>
   );
 }
 
-export default todo;
+export default Todo;
