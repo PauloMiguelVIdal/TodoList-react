@@ -2,14 +2,16 @@ import React, { useState } from 'react';
 import './App.css';
 import List from './List';
 import TodoForm from './TodoForm';
-
+import Item from './item';
 
 
 function Todo() {
 
   const [items, setItems] = useState([])
 
-  function onAddItem(item){
+  function onAddItem(text){
+let item = new Item(text)
+
 setItems([...items, item])
   }
 
