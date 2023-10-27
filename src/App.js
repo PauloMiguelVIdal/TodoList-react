@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './App.css';
-
+import List from './List';
 
 
 
 function Todo() {
 
   const [text, setText] = useState("")
-  const [itens, setItems] = useState([])
+  const [items, setItems] = useState([])
   function handlechange(event) {
     let t = event.target.value;
     setText(t)
@@ -17,7 +17,7 @@ function Todo() {
     
       event.preventDefault();
       if (text) {
-      setItems([...itens, text])
+      setItems([...items, text])
       setText("")
     }
   }
@@ -32,12 +32,12 @@ function Todo() {
           Add
         </button>
       </form>
-      <ul>
-        <li>{itens.map(item => <li>{item}</li>)}</li>
-      </ul>
+      <List items={items}></List>
+  
     </div>
   );
 }
+
 
 export default Todo;
 
